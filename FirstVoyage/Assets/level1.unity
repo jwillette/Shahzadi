@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &192258036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &364992907
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +708,7 @@ GameObject:
   - 143: {fileID: 642044529}
   - 114: {fileID: 642044528}
   - 114: {fileID: 642044530}
+  - 54: {fileID: 642044531}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -830,6 +831,21 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   ammoPU: {fileID: 0}
   treasurePU: {fileID: 0}
+--- !u!54 &642044531
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 642044523}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &788166353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,8 +1164,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1298158491}
-  m_LocalRotation: {x: 0.023980772, y: 0.9467168, z: 0.07256593, w: -0.31286824}
-  m_LocalPosition: {x: 261.18304, y: 1.6344471, z: 445.3683}
+  m_LocalRotation: {x: 0.19595423, y: 0.6707173, z: 0.19061744, w: -0.68949634}
+  m_LocalPosition: {x: 63.436256, y: -2.6855898, z: 481.0051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1472,7 +1488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1732500217
 GameObject:
   m_ObjectHideFlags: 0
