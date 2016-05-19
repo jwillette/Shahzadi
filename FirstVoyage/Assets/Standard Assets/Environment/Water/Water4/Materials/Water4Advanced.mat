@@ -182,16 +182,16 @@ Material:
         second: 1.6714286
       data:
         first:
+          name: _InvFade
+        second: 0.628783
+      data:
+        first:
           name: _HeightDisplacement
         second: 3.2722514
       data:
         first:
           name: _NormalsDisplacement
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: 0.628783
       data:
         first:
           name: _Displacement

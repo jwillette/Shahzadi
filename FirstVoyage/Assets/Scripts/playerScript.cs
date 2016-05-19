@@ -3,11 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 using InControl;
 
+[RequireComponent(typeof(CharacterController))]
+
 
 
 public class playerScript : MonoBehaviour {
 
-	public int numberOfShots;
+	public int numberOfShots = 5;
 	public int numberOfTreasures;
 
 	public float shotForce;
@@ -71,7 +73,7 @@ public class playerScript : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint (ammoPU, transform.position);
 			Destroy (other.gameObject);
-			numberOfShots = 10;
+			numberOfShots = 5;
 		}
 
 		if (other.collider.tag == "treasurePU") {
@@ -88,7 +90,7 @@ public class playerScript : MonoBehaviour {
 	void Start () {
 	
 		shotsUI.GetComponent<Image> ().sprite = shots [numberOfShots];
-		treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
+		//treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
 //		Cursor.visible = false;
 	}
 
@@ -97,18 +99,19 @@ public class playerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		InputDevice device = InputManager.ActiveDevice;
+
 		//Cursor.lockState = CursorLockMode.Locked;
 
 		shotsUI.GetComponent<Image> ().sprite = shots [numberOfShots];
-		treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
+		//treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
 
-		if (InputManager.ActiveDevice.Action2.WasPressed && numberOfShots > 0) {
+		if (device.Action2.WasPressed) {
 
 			numberOfShots--;
 
 			Rigidbody tempBullet = Instantiate (shot, firePoint.position, firePoint.rotation) as Rigidbody;
 			tempBullet.velocity = tempBullet.transform.forward * shotForce;
-
 		}
 	}
 }
