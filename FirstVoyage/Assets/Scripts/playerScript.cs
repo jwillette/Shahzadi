@@ -35,7 +35,7 @@ public class playerScript : MonoBehaviour {
 	{
 		if (other.tag == "enemy") {
 
-			playerHealth -= .25f;
+			playerHealth -= .15f;
 			healthMid.fillAmount = playerHealth / maxHealth;
 
 			if (playerHealth <= 0) {
@@ -52,14 +52,14 @@ public class playerScript : MonoBehaviour {
 	{
 		if (other.tag == "enemy") {
 
-			playerHealth -= 5.0f;
+			playerHealth -= 2.5f;
 			healthMid.fillAmount = playerHealth / maxHealth;
 
-			if (playerHealth <= 0) {
+            //if (playerHealth <= 0) {
 
-				Application.LoadLevel ("level1");
+            //    Application.LoadLevel ("level1");
 
-			}
+            //}
 		}
 	}
 
