@@ -7,6 +7,10 @@ TagManager:
   - enemy
   - terrain
   - shot
+  - Fire
+  - ammoPU
+  - treasurePU
+  - healthPU
   layers:
   - Default
   - TransparentFX

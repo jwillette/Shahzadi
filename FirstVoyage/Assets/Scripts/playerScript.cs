@@ -71,26 +71,38 @@ public class playerScript : MonoBehaviour {
 	{
 		if (other.collider.tag == "ammoPU") {
 
-			AudioSource.PlayClipAtPoint (ammoPU, transform.position);
+			//AudioSource.PlayClipAtPoint (ammoPU, transform.position);
 			Destroy (other.gameObject);
 			numberOfShots = 5;
 		}
 
 		if (other.collider.tag == "treasurePU") {
 
-			AudioSource.PlayClipAtPoint (treasurePU, transform.position);
+			//AudioSource.PlayClipAtPoint (treasurePU, transform.position);
 			Destroy (other.gameObject);
 			numberOfTreasures++;
 		}
+
+        if (other.collider.tag == "healthPU")
+        {
+
+            //AudioSource.PlayClipAtPoint (treasurePU, transform.position);
+            Destroy(other.gameObject);
+            playerHealth += 25;
+            healthMid.fillAmount = playerHealth / maxHealth;
+
+        }
 	}
 
 
 
 	// Use this for initialization
 	void Start () {
+
+        healthMid.fillAmount = playerHealth / maxHealth;
 	
 		shotsUI.GetComponent<Image> ().sprite = shots [numberOfShots];
-		//treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
+		treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
 //		Cursor.visible = false;
 	}
 
@@ -104,9 +116,9 @@ public class playerScript : MonoBehaviour {
 		//Cursor.lockState = CursorLockMode.Locked;
 
 		shotsUI.GetComponent<Image> ().sprite = shots [numberOfShots];
-		//treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
+		treasureUI.GetComponent<Image> ().sprite = treasures [numberOfTreasures];
 
-		if (device.Action2.WasPressed) {
+		if (device.Action2.WasPressed && numberOfShots > 0) {
 
 			numberOfShots--;
 

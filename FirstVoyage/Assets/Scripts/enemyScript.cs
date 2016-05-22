@@ -4,13 +4,12 @@ using System.Collections;
 public class enemyScript : MonoBehaviour
 {
 
-
-
 	public int enemyHealth = 75;
 	public int enemySpeed;
 
 	public GameObject thePlayer;
 	public GameObject explosion;
+    public GameObject healthDrop;
 
 	public CharacterController myController;
 
@@ -22,17 +21,17 @@ public class enemyScript : MonoBehaviour
 	{
 		if (other.collider.tag == "shot") {
 
-			int tempNum = Random.Range (1, 3);
+            //int tempNum = Random.Range (1, 3);
 
-			if (tempNum == 1) {
+            //if (tempNum == 1) {
 
-				AudioSource.PlayClipAtPoint (hit, transform.position);
+            //    AudioSource.PlayClipAtPoint (hit, transform.position);
 	
-			} else if (tempNum == 2) {
+            //} else if (tempNum == 2) {
 
-				AudioSource.PlayClipAtPoint (hit2, transform.position);
+            //    AudioSource.PlayClipAtPoint (hit2, transform.position);
 
-			}
+            //}
 
 			Destroy (other.collider.gameObject);
 
@@ -40,7 +39,9 @@ public class enemyScript : MonoBehaviour
 
 			if (enemyHealth <= 0) {
 
-				Destroy (other.gameObject);
+                Instantiate(healthDrop, transform.position, transform.rotation);
+
+				Destroy (gameObject);
 
 			}
 		}
